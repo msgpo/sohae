@@ -26,13 +26,28 @@ class DormsController extends AppController
                +sin(radians(:latitude))*sin(radians(dorm_latitude))))
                AS distance FROM dorms ORDER BY distance', ['latitude' => $latitude, 'longitude' => $longitude])
     		->fetchAll('assoc');
-		$my_results = [
-			'latitude'=> $latitude,
-			'longitude' => $longitude
-		];
 
 		$this->set([
     		'my_response' => $results,
+    		'_serialize' => 'my_response',
+		]);
+		$this->RequestHandler->renderAs($this, 'json');
+	}
+	
+	public function getDorm($id = null)
+	{
+		$dormBaseInfo = $this->Dorms->get($id);
+		$dormReviews = [];
+		$dormImages = [];
+
+		$fullInfo = [
+			'general_info' => $dormBaseInfo,
+			'reviews' => $dormReviews,
+			'images' => $dormImages
+		];
+
+		$this->set([
+    		'my_response' => $fullInfo,
     		'_serialize' => 'my_response',
 		]);
 		$this->RequestHandler->renderAs($this, 'json');

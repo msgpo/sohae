@@ -59,6 +59,13 @@ Router::prefix('api', function ($routes) {
     		'pass' => ['latitude', 'longitude']
     	]
     );
+    Router::connect(
+    	'/api/dorms/getInfo/:id', 
+    	['controller' => 'Dorms', 'action' => 'getDorm', 'prefix' => 'api'],
+    	[
+    		'pass' => ['id']
+    	]
+    );
     $routes->fallbacks('InflectedRoute');
 });
 
