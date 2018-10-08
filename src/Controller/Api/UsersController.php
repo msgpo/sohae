@@ -53,5 +53,17 @@ class UsersController extends AppController
         	'_serialize' => ['success', 'data']
     	]);
 	}
+	
+	// DO NOT REMOVE - THIS IS TO BE USED AS A GUIDELINE
+	public function testing()
+	{
+		$my_results = ['foo'=>'bar'];
+
+		$this->set([
+    		'my_response' => $my_results,
+    		'_serialize' => 'my_response',
+		]);
+		$this->RequestHandler->renderAs($this, 'json');
+	}
 }
 

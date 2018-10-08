@@ -51,6 +51,7 @@ Router::prefix('api', function ($routes) {
     $routes->resources('Cocktails');
     $routes->resources('Users');
     Router::connect('/api/users/register', ['controller' => 'Users', 'action' => 'add', 'prefix' => 'api']);
+    Router::connect('/api/users/testing', ['controller' => 'Users', 'action' => 'testing', 'prefix' => 'api']);
     $routes->fallbacks('InflectedRoute');
 });
 
