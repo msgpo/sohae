@@ -52,6 +52,13 @@ Router::prefix('api', function ($routes) {
     $routes->resources('Users');
     Router::connect('/api/users/register', ['controller' => 'Users', 'action' => 'add', 'prefix' => 'api']);
     Router::connect('/api/users/testing', ['controller' => 'Users', 'action' => 'testing', 'prefix' => 'api']);
+    Router::connect(
+    	'/api/dorms/nearby/:latitude/:longitude', 
+    	['controller' => 'Dorms', 'action' => 'nearby', 'prefix' => 'api'],
+    	[
+    		'pass' => ['latitude', 'longitude']
+    	]
+    );
     $routes->fallbacks('InflectedRoute');
 });
 
