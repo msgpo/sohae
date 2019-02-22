@@ -91,7 +91,6 @@ class ComposerStaticInitd2d44ae6cf9cb60aef1c8d1b51461c65
         ),
         'C' => 
         array (
-            'Crud\\' => 5,
             'Composer\\XdebugHandler\\' => 23,
             'Composer\\Spdx\\' => 14,
             'Composer\\Semver\\' => 16,
@@ -241,10 +240,6 @@ class ComposerStaticInitd2d44ae6cf9cb60aef1c8d1b51461c65
         'DebugKit\\' => 
         array (
             0 => __DIR__ . '/..' . '/cakephp/debug_kit/src',
-        ),
-        'Crud\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/friendsofcake/crud/src',
         ),
         'Composer\\XdebugHandler\\' => 
         array (
